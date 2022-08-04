@@ -3,6 +3,7 @@ let actitivitiesContainer = document.querySelector(".activities-container");
 
 let userAvatar = document.getElementById("user_avatar");
 let userBanner = document.getElementById("user_banner");
+let userDiscordStatus = document.getElementById("user_discord_status");
 let userNickname = document.getElementById("user_nickname");
 let userUsername = document.getElementById("user_username");
 let userActivitiePlaying = document.getElementById("user_activitie_playing");
@@ -26,6 +27,8 @@ window.onload = function () {
 
       userAvatar.src =
         discordCdn + "/avatars/" + userId + "/" + user.discord_user.avatar;
+
+      user_discord_status.className = 'discord-status ' + user.discord_status
 
       if (user.discord_user.username)
         userUsername.innerHTML =

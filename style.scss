@@ -59,7 +59,7 @@ $content-padding: 16px;
         ($avatar-wh + ($avatar-border * 2) ) - ( math.div($avatar-wh, 2) + $avatar-border)
       );
 
-      > img {
+      .avatar {
         position: relative;
         top: - calc(math.div($avatar-wh, 2) + $avatar-border);
 
@@ -70,6 +70,62 @@ $content-padding: 16px;
         width: $avatar-wh;
         height: $avatar-wh;
       }
+
+      .discord-status{
+        position: relative;
+        top: - calc(((math.div($avatar-wh, 2) + $avatar-border + 16px) * 1.15) + $avatar-border);
+        left: calc(($avatar-wh * 0.85) - $avatar-border);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: solid base-colors.$container-color $avatar-border;
+      }
+
+      .offline{
+        background-color: base-colors.$offline-color;
+      }    
+      .offline::before{
+        content: '';
+        display: block;
+        position: relative;
+        left: calc(math.div($avatar-border, 2) + 1px);
+        top: calc(math.div($avatar-border, 2) + 1px);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: base-colors.$container-color;
+      }
+
+      .idle{
+        background-color: base-colors.$idle-color;
+      }    
+      .idle::before{
+        content: '';
+        display: block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-color: base-colors.$container-color;
+      }
+
+      .dnd{
+        background-color: base-colors.$dnd-color;
+      }    
+      .dnd::before{
+        content: '';
+        display: block;
+        width: 12px;
+        height: 4px;
+        position: relative;
+        top: calc(math.div($avatar-border, 2) + 2.5px);
+        left: 2px;
+        border-radius: 20%;
+        background-color: base-colors.$container-color;
+      }
+
+      .online{
+        background-color: base-colors.$online-color;
+      }    
 
       .badges {
         display: flex;
