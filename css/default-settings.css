@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Uni Sans";
+  src: url(../fonts/UniSansRegular.otf) format("opentype");
+}
+main {
+  background-color: #36393f;
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  font-family: "Uni Sans", "sans-serif";
+  word-break: break-word;
+  padding-bottom: 4px;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 14px;
+  color: #B9BBBE;
+}
+
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 12px;
+  color: #B9BBBE;
+  text-shadow: 0 0 #B9BBBE;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-size: 14px;
+  line-height: 14px;
+  color: #DCDDDE;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 14px;
+  color: #DCDDDE;
+}
+
+p,
+a {
+  font-size: 14px;
+  padding-bottom: 0;
+  line-height: 14px;
+}
+
+a {
+  color: #00AFF4;
+  text-decoration: none;
+}
+
+p {
+  color: #DCDDDE;
+}/*# sourceMappingURL=default-settings.css.map */

@@ -1,1 +1,190 @@
-/*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: "Uni Sans";
+  src: url(../fonts/UniSansRegular.otf) format("opentype");
+}
+main {
+  background-color: #36393f;
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  font-family: "Uni Sans", "sans-serif";
+  word-break: break-word;
+  padding-bottom: 4px;
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 14px;
+  line-height: 14px;
+  color: #B9BBBE;
+}
+
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 12px;
+  color: #B9BBBE;
+  text-shadow: 0 0 #B9BBBE;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-size: 14px;
+  line-height: 14px;
+  color: #DCDDDE;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 14px;
+  color: #DCDDDE;
+}
+
+p,
+a {
+  font-size: 14px;
+  padding-bottom: 0;
+  line-height: 14px;
+}
+
+a {
+  color: #00AFF4;
+  text-decoration: none;
+}
+
+p {
+  color: #DCDDDE;
+}
+
+.margin-bottom {
+  margin-bottom: 16px;
+}
+
+.tittle-margin-bottom {
+  margin-bottom: 8px;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 7px 7px 14px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 7px 7px 14px 0px rgba(0, 0, 0, 0.4);
+  width: 300px;
+  border-radius: 8px;
+  background-color: #18191c;
+}
+.container .banner {
+  height: 120px;
+  width: 300px;
+}
+.container .banner > img {
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.container .content {
+  padding: 16px;
+  padding-top: 0px;
+}
+.container .content .images-container {
+  display: flex;
+  justify-content: space-between;
+  height: 46px;
+}
+.container .content .images-container > img {
+  position: relative;
+  top: -46px;
+  border-radius: 50%;
+  border: solid #18191c 6px;
+  background-color: #18191c;
+  width: 80px;
+  height: 80px;
+}
+.container .content .images-container .badges {
+  display: flex;
+  align-items: flex-end;
+}
+.container .content .images-container .badges img {
+  width: 24px;
+  height: 24px;
+}
+.container .content .activities-container .activitie-detail {
+  display: flex;
+  gap: 10px;
+}
+.container .content .activities-container .activitie-detail > img {
+  width: 60px;
+  height: 60px;
+}
+.container .content .roles-container .roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.container .content .roles-container .roles .role {
+  height: 14px;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  font-family: "Uni Sans", "sans-serif";
+  font-size: 12px;
+  color: #FFFFFF;
+  background-color: #292b2f;
+}
+.container .content .roles-container .roles .role .role-text {
+  padding-right: 4px;
+}
+.container .content .roles-container .roles .role .circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  margin: 0px 4px;
+}
+.container .content .roles-container .roles .role .dev {
+  background-color: #e91e63;
+}
+.container .content .roles-container .roles .role .front {
+  background-color: #8700d3;
+}
+.container .content .roles-container .roles .role .angular {
+  background-color: #ff0004;
+}
+.container .content .roles-container .roles .role .css {
+  background-color: #e67e22;
+}
+.container .content .roles-container .roles .role .html {
+  background-color: #3498db;
+}
+.container .content .roles-container .roles .role .js {
+  background-color: #f1c40f;
+}
+.container .content .roles-container .roles .add-role {
+  padding: 4px 7px;
+}/*# sourceMappingURL=style.css.map */

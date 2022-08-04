@@ -1,0 +1,143 @@
+@use "base-colors";
+@use "default-settings";
+@use "sass:math";
+
+$border-radius: 8px;
+$margin-bottom: 16px;
+$tittle-margin-bottom: 8px;
+
+$banner-height: 120px;
+$banner-width: 300px;
+
+$avatar-wh: 80px;
+$avatar-border: 6px;
+$badges-wh: 24px;
+
+$content-padding: 16px;
+
+.margin-bottom{
+  margin-bottom: $margin-bottom;
+}
+
+.tittle-margin-bottom{
+  margin-bottom: $tittle-margin-bottom;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  -webkit-box-shadow: 7px 7px 14px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 7px 7px 14px 0px rgba(0, 0, 0, 0.4);
+
+  width: 300px;
+  // height: 600px;
+  border-radius: $border-radius;
+  background-color: base-colors.$container-color;
+
+  .banner {
+    height: $banner-height;
+    width: $banner-width;
+    
+    > img {
+      border-top-right-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+    }
+  }
+
+  .content {
+    padding: $content-padding;
+    padding-top: 0px;
+
+    .images-container {
+      display: flex;
+      justify-content: space-between;
+
+      height: calc(
+        ($avatar-wh + ($avatar-border * 2) ) - ( math.div($avatar-wh, 2) + $avatar-border)
+      );
+
+      > img {
+        position: relative;
+        top: - calc(math.div($avatar-wh, 2) + $avatar-border);
+
+        border-radius: 50%;
+        border: solid base-colors.$container-color $avatar-border;
+        background-color: base-colors.$container-color;
+
+        width: $avatar-wh;
+        height: $avatar-wh;
+      }
+
+      .badges {
+        display: flex;
+        align-items: flex-end;
+
+        img {
+          width: $badges-wh;
+          height: $badges-wh;
+        }
+      }
+    }
+
+    .activities-container{
+      .activitie-detail{
+        display: flex;
+        gap: 10px;
+
+        >img{
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    .roles-container{
+      .roles{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        
+        .role{
+          height: 14px;
+          display: flex;
+          gap: 2px;
+          padding: 4px;
+          border-radius: 4px;
+          letter-spacing: 1px;
+          font-family: "Uni Sans", "sans-serif";
+          font-size: default-settings.$roles-font-size;
+          color: base-colors.$badges-color;
+          background-color: base-colors.$role-background;
+
+          .role-text{
+            padding-right: 4px;
+          }
+
+          .circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            margin: 0px 4px;
+          }
+
+          .dev{ background-color: base-colors.$dev-color; }
+          .front{ background-color: base-colors.$frontEnd-color; }
+          .angular{ background-color: base-colors.$angular-color; }
+          .css{ background-color: base-colors.$css-color; }
+          .html{ background-color: base-colors.$html-color; }
+          .js{ background-color: base-colors.$js-color; }
+        }
+
+        .add-role{
+          padding: 4px 7px;
+        }
+      }
+    }
+
+  }
+}
+

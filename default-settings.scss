@@ -1,0 +1,91 @@
+@use "base-colors";
+
+$nickname-font-size: 20px;
+$username-font-size: 14px;
+$tittle-font-size: 12px;
+$subtittle-font-size: 14px;
+$content-font-size: 14px;
+$roles-font-size: 12px;
+
+@font-face {
+  font-family: "Uni Sans";
+  src: url(../fonts/UniSansRegular.otf) format("opentype");
+}
+
+main {
+  background-color: base-colors.$background-color;
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  font-family: "Uni Sans", "sans-serif";
+  word-break: break-word;
+  padding-bottom: 4px;
+}
+
+h1 {
+  font-size: $nickname-font-size;
+  line-height: $nickname-font-size;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: base-colors.$nickName-color;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: $username-font-size;
+  line-height: $username-font-size;
+  color: base-colors.$username-color;
+}
+
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: $tittle-font-size;
+  line-height: $tittle-font-size;
+  color: base-colors.$tittle-color;
+  text-shadow: 0 0 base-colors.$tittle-color;
+  letter-spacing: 1px;
+}
+
+h4 { 
+  font-size: $subtittle-font-size;
+  line-height: $subtittle-font-size;
+  color: base-colors.$subtittle-color;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h5 {
+  font-size: $subtittle-font-size;
+  line-height: $subtittle-font-size;
+  color: base-colors.$subtittle-color;
+}
+
+p,
+a {
+  font-size: $content-font-size;
+  padding-bottom: 0;
+  line-height: $content-font-size;
+}
+
+a {
+  color: base-colors.$links-color;
+  text-decoration: none;
+}
+
+p {
+  color: base-colors.$content-color;
+}
