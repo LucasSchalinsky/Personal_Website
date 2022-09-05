@@ -44,7 +44,8 @@ window.onload = function () {
         } else {
           userActivitiePlaying.innerHTML = "Playing a game";
           userActivitieName.innerHTML = user.activities[0].name;
-          userActivitieDoing.innerHTML = user.activities[0].details;
+          if(user.activities[0].details) userActivitieDoing.innerHTML = user.activities[0].details;
+          else removeActivitieDoing();
         }
       } else removeActivities();
 
@@ -83,4 +84,8 @@ function removeActivities() {
 
 function removeUsername() {
   userUsername.parentElement.removeChild(userUsername);
+}
+
+function removeActivitieDoing() {
+  userActivitieDoing.parentElement.removeChild(userActivitieDoing);
 }
