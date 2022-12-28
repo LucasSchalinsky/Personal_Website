@@ -15,11 +15,11 @@ $badges-wh: 24px;
 
 $content-padding: 16px;
 
-.margin-bottom{
+.margin-bottom {
   margin-bottom: $margin-bottom;
 }
 
-.tittle-margin-bottom{
+.tittle-margin-bottom {
   margin-bottom: $tittle-margin-bottom;
 }
 
@@ -33,14 +33,13 @@ $content-padding: 16px;
   box-shadow: 7px 7px 14px 0px rgba(0, 0, 0, 0.4);
 
   width: 300px;
-  // height: 600px;
   border-radius: $border-radius;
   background-color: base-colors.$container-color;
 
   .banner {
     height: $banner-height;
     width: $banner-width;
-    
+
     > img {
       border-top-right-radius: $border-radius;
       border-top-left-radius: $border-radius;
@@ -56,7 +55,8 @@ $content-padding: 16px;
       justify-content: space-between;
 
       height: calc(
-        ($avatar-wh + ($avatar-border * 2) ) - ( math.div($avatar-wh, 2) + $avatar-border)
+        ($avatar-wh + ($avatar-border * 2)) -
+          (math.div($avatar-wh, 2) + $avatar-border)
       );
 
       .avatar {
@@ -71,9 +71,10 @@ $content-padding: 16px;
         height: $avatar-wh;
       }
 
-      .discord-status{
+      .discord-status {
         position: relative;
-        top: - calc(((math.div($avatar-wh, 2) + $avatar-border + 16px) * 1.15) + $avatar-border);
+        top: - calc(((math.div($avatar-wh, 2) + $avatar-border + 16px) * 1.15) +
+              $avatar-border);
         left: calc(($avatar-wh * 0.85) - $avatar-border);
         width: 16px;
         height: 16px;
@@ -81,11 +82,11 @@ $content-padding: 16px;
         border: solid base-colors.$container-color $avatar-border;
       }
 
-      .offline{
+      .offline {
         background-color: base-colors.$offline-color;
-      }    
-      .offline::before{
-        content: '';
+      }
+      .offline::before {
+        content: "";
         display: block;
         position: relative;
         left: calc(math.div($avatar-border, 2) + 1px);
@@ -96,11 +97,11 @@ $content-padding: 16px;
         background-color: base-colors.$container-color;
       }
 
-      .idle{
+      .idle {
         background-color: base-colors.$idle-color;
-      }    
-      .idle::before{
-        content: '';
+      }
+      .idle::before {
+        content: "";
         display: block;
         width: 11px;
         height: 11px;
@@ -108,11 +109,11 @@ $content-padding: 16px;
         background-color: base-colors.$container-color;
       }
 
-      .dnd{
+      .dnd {
         background-color: base-colors.$dnd-color;
-      }    
-      .dnd::before{
-        content: '';
+      }
+      .dnd::before {
+        content: "";
         display: block;
         width: 12px;
         height: 4px;
@@ -123,9 +124,9 @@ $content-padding: 16px;
         background-color: base-colors.$container-color;
       }
 
-      .online{
+      .online {
         background-color: base-colors.$online-color;
-      }    
+      }
 
       .badges {
         display: flex;
@@ -138,25 +139,41 @@ $content-padding: 16px;
       }
     }
 
-    .activities-container{
-      .activitie-detail{
+    .activities-container {
+      .activitie-detail {
         display: flex;
         gap: 10px;
 
-        >img{
+        > .activitie-images {
           width: 60px;
           height: 60px;
+
+          > img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px; 
+          }
+
+          > .activitie-small-image{
+            position: relative;
+            top: - calc(math.div($avatar-border, 2) + 20px);
+            left: calc(math.div($avatar-border, 2) + 40px);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: solid base-colors.$container-color math.div($avatar-border, 2);
+          }
         }
       }
     }
-
-    .roles-container{
-      .roles{
+ 
+    .roles-container {
+      .roles {
         display: flex;
         flex-wrap: wrap;
         gap: 4px;
-        
-        .role{
+
+        .role {
           height: 14px;
           display: flex;
           gap: 2px;
@@ -168,7 +185,7 @@ $content-padding: 16px;
           color: base-colors.$badges-color;
           background-color: base-colors.$role-background;
 
-          .role-text{
+          .role-text {
             padding-right: 4px;
           }
 
@@ -180,20 +197,30 @@ $content-padding: 16px;
             margin: 0px 4px;
           }
 
-          .dev{ background-color: base-colors.$dev-color; }
-          .front{ background-color: base-colors.$frontEnd-color; }
-          .angular{ background-color: base-colors.$angular-color; }
-          .css{ background-color: base-colors.$css-color; }
-          .html{ background-color: base-colors.$html-color; }
-          .js{ background-color: base-colors.$js-color; }
+          .dev {
+            background-color: base-colors.$dev-color;
+          }
+          .front {
+            background-color: base-colors.$frontEnd-color;
+          }
+          .angular {
+            background-color: base-colors.$angular-color;
+          }
+          .css {
+            background-color: base-colors.$css-color;
+          }
+          .html {
+            background-color: base-colors.$html-color;
+          }
+          .js {
+            background-color: base-colors.$js-color;
+          }
         }
 
-        .add-role{
+        .add-role {
           padding: 4px 7px;
         }
       }
     }
-
   }
 }
-

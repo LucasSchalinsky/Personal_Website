@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/base-colors.css" />
@@ -38,7 +38,10 @@
                 id="user_avatar"
                 alt="User Discord Avatar"
               />
-              <div id="user_discord_status" class="discord-status offline"></div>
+              <div
+                id="user_discord_status"
+                class="discord-status offline"
+              ></div>
             </div>
 
             <div class="badges">
@@ -77,11 +80,15 @@
             <h3 class="tittle-margin-bottom" id="user_activitie_playing"></h3>
 
             <div class="activitie-detail">
-              <img
-                src="images/UndefinedActivitie.svg"
-                alt="Undefined Activitie Image"
-                id="user_activitie_image"
-              />
+              <div class="activitie-images">
+                <img
+                  src="images/UndefinedActivitie.svg"
+                  alt="Activitie Image"
+                  id="user_activitie_image_large"
+                />
+
+                <img class="activitie-small-image" id="user_activitie_image_small" src="" alt="Small Activitie Image">
+              </div>
 
               <div class="activitie-info">
                 <h4 id="user_activitie_name"></h4>

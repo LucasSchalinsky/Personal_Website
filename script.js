@@ -9,7 +9,8 @@ let userUsername = document.getElementById("user_username");
 let userActivitiePlaying = document.getElementById("user_activitie_playing");
 let userActivitieName = document.getElementById("user_activitie_name");
 let userActivitieDoing = document.getElementById("user_activitie_doing");
-let userActivitieImage = document.getElementById("user_activitie_image");
+let userActivitieImageLarge = document.getElementById("user_activitie_image_large");
+let userActivitieImageSmall = document.getElementById("user_activitie_image_small");
 let userAge = document.getElementById("user_age");
 
 const userId = "113063556865392640";
@@ -40,11 +41,19 @@ window.onload = function () {
           userActivitiePlaying.innerHTML = "Listening to Spotify";
           userActivitieName.innerHTML = user.activities[0].details;
           userActivitieDoing.innerHTML = user.activities[0].state;
-          userActivitieImage.src = "./images/spotify.png";
+          userActivitieImageLarge.src = "./images/spotify.png";
+          removeSmallImageActivitie();
         } else {
           userActivitiePlaying.innerHTML = "Playing a game";
           userActivitieName.innerHTML = user.activities[0].name;
-          if(user.activities[0].details) userActivitieDoing.innerHTML = user.activities[0].details;
+
+          if(user.activities[0]?.assets?.large_image) userActivitieImageLarge.src = discordCdn + "/app-assets/" + user.activities[0].application_id + "/" + user.activities[0].assets.large_image;
+          else userActivitieImageLarge.src = "./images/UndefinedActivitie.svg";
+
+          if(user.activities[0]?.assets?.small_image) userActivitieImageSmall.src = discordCdn + "/app-assets/" + user.activities[0].application_id + "/" + user.activities[0].assets.small_image;
+          else removeSmallImageActivitie();
+
+          if(user.activities[0]?.details) userActivitieDoing.innerHTML = user.activities[0].details;
           else removeActivitieDoing();
         }
       } else removeActivities();
@@ -88,4 +97,8 @@ function removeUsername() {
 
 function removeActivitieDoing() {
   userActivitieDoing.parentElement.removeChild(userActivitieDoing);
+}
+
+function removeSmallImageActivitie() {
+  userActivitieImageSmall.parentElement.removeChild(userActivitieImageSmall);
 }
