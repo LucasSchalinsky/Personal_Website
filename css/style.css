@@ -6,6 +6,7 @@ main {
   background-color: #36393f;
   width: 100vw;
   height: 100vh;
+  position: fixed;
 }
 
 img {
