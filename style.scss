@@ -40,10 +40,15 @@ $content-padding: 16px;
     height: $banner-height;
     width: $banner-width;
 
-    > img {
-      border-top-right-radius: $border-radius;
-      border-top-left-radius: $border-radius;
-    }
+    background-image: url(../images/113063556865392640.png);
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-border-top-right-radius: $border-radius;
+    -webkit-border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
   }
 
   .content {

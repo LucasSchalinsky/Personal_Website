@@ -102,8 +102,13 @@ p {
 .container .banner {
   height: 120px;
   width: 300px;
-}
-.container .banner > img {
+  background-image: url(../images/113063556865392640.png);
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-border-top-right-radius: 8px;
+  -webkit-border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }

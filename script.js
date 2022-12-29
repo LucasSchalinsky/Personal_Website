@@ -59,7 +59,7 @@ window.onload = function () {
       } else removeActivities();
 
       
-      userBanner.src = "https://dcdn.dstn.to/banners/113063556865392640"
+      userBanner.style.backgroundImage = "url(https://dcdn.dstn.to/banners/113063556865392640)";
 
       removeSpinner();
     })
