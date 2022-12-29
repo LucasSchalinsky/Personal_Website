@@ -102,7 +102,7 @@ p {
 .container .banner {
   height: 120px;
   width: 300px;
-  background-image: url(../images/113063556865392640.png);
+  background-image: url(../images/defaultBanner.png);
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
