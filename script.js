@@ -71,7 +71,7 @@ window.onload = function () {
 };
 
 userBanner.onerror = () =>{
-  userBanner.src = "images/a_a9d4f02a7b3131022a7a3d56b99cf292.gif"
+  userBanner.src = "images/defaultBanner.png"
 }
 
 function calculate_age(dob) { 
