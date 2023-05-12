@@ -17,7 +17,7 @@ const userId = "113063556865392640";
 const discordCdn = "https://cdn.discordapp.com";
 
 window.onload = function () {
-  userAge.innerHTML = JSON.stringify(calculate_age(new Date(2002, 05, 10))) + "y"
+  userAge.innerHTML = JSON.stringify(calculate_age(new Date(2002, 04, 10))) + "y"
 
   fetch("https://api.lanyard.rest/v1/users/" + userId, {
     method: "get",
