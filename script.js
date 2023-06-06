@@ -9,15 +9,20 @@ let userUsername = document.getElementById("user_username");
 let userActivitiePlaying = document.getElementById("user_activitie_playing");
 let userActivitieName = document.getElementById("user_activitie_name");
 let userActivitieDoing = document.getElementById("user_activitie_doing");
-let userActivitieImageLarge = document.getElementById("user_activitie_image_large");
-let userActivitieImageSmall = document.getElementById("user_activitie_image_small");
+let userActivitieImageLarge = document.getElementById(
+  "user_activitie_image_large"
+);
+let userActivitieImageSmall = document.getElementById(
+  "user_activitie_image_small"
+);
 let userAge = document.getElementById("user_age");
 
 const userId = "113063556865392640";
 const discordCdn = "https://cdn.discordapp.com";
 
 window.onload = function () {
-  userAge.innerHTML = JSON.stringify(calculate_age(new Date(2002, 04, 10))) + "y"
+  userAge.innerHTML =
+    JSON.stringify(calculate_age(new Date(2002, 04, 10))) + "y";
 
   fetch("https://api.lanyard.rest/v1/users/" + userId, {
     method: "get",
@@ -29,11 +34,10 @@ window.onload = function () {
       userAvatar.src =
         discordCdn + "/avatars/" + userId + "/" + user.discord_user.avatar;
 
-      user_discord_status.className = 'discord-status ' + user.discord_status
+      user_discord_status.className = "discord-status " + user.discord_status;
 
       if (user.discord_user.username)
-        userUsername.innerHTML =
-          user.discord_user.username + "#" + user.discord_user.discriminator;
+        userUsername.innerHTML = user.discord_user.username;
       else removeUsername();
 
       if (user.activities.length > 0) {
@@ -47,19 +51,32 @@ window.onload = function () {
           userActivitiePlaying.innerHTML = "Playing a game";
           userActivitieName.innerHTML = user.activities[0].name;
 
-          if(user.activities[0]?.assets?.large_image) userActivitieImageLarge.src = discordCdn + "/app-assets/" + user.activities[0].application_id + "/" + user.activities[0].assets.large_image;
+          if (user.activities[0]?.assets?.large_image)
+            userActivitieImageLarge.src =
+              discordCdn +
+              "/app-assets/" +
+              user.activities[0].application_id +
+              "/" +
+              user.activities[0].assets.large_image;
           else userActivitieImageLarge.src = "./images/UndefinedActivitie.svg";
 
-          if(user.activities[0]?.assets?.small_image) userActivitieImageSmall.src = discordCdn + "/app-assets/" + user.activities[0].application_id + "/" + user.activities[0].assets.small_image;
+          if (user.activities[0]?.assets?.small_image)
+            userActivitieImageSmall.src =
+              discordCdn +
+              "/app-assets/" +
+              user.activities[0].application_id +
+              "/" +
+              user.activities[0].assets.small_image;
           else removeSmallImageActivitie();
 
-          if(user.activities[0]?.details) userActivitieDoing.innerHTML = user.activities[0].details;
+          if (user.activities[0]?.details)
+            userActivitieDoing.innerHTML = user.activities[0].details;
           else removeActivitieDoing();
         }
       } else removeActivities();
 
-      
-      userBanner.style.backgroundImage = "url(https://dcdn.dstn.to/banners/113063556865392640)";
+      userBanner.style.backgroundImage =
+        "url(https://dcdn.dstn.to/banners/113063556865392640)";
 
       removeSpinner();
     })
@@ -70,13 +87,13 @@ window.onload = function () {
     });
 };
 
-userBanner.onerror = () =>{
-  userBanner.src = "images/defaultBanner.png"
-}
+userBanner.onerror = () => {
+  userBanner.src = "images/defaultBanner.png";
+};
 
-function calculate_age(dob) { 
+function calculate_age(dob) {
   var diff_ms = Date.now() - dob.getTime();
-  var age_dt = new Date(diff_ms); 
+  var age_dt = new Date(diff_ms);
 
   return Math.abs(age_dt.getUTCFullYear() - 1970);
 }
