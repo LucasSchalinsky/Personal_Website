@@ -40,8 +40,15 @@ window.onload = function () {
         userUsername.innerHTML = user.discord_user.username;
       else removeUsername();
 
+      let indexToUse = user.activities?.[0]?.name.toLowerCase() === "custom status" ? 1 : 0;
+
       if (user.activities.length > 0) {
-        if (user.activities[0].name === "Spotify") {
+        if (
+          user.activities[0].name.toLowerCase() === "custom status" &&
+          user.activities.length < 2
+        )
+          removeActivities();
+        else if (user.activities[indexToUse].name === "Spotify") {
           userActivitiePlaying.innerHTML = "Listening to Spotify";
           userActivitieName.innerHTML = user.activities[0].details;
           userActivitieDoing.innerHTML = user.activities[0].state;
@@ -49,28 +56,28 @@ window.onload = function () {
           removeSmallImageActivitie();
         } else {
           userActivitiePlaying.innerHTML = "Playing a game";
-          userActivitieName.innerHTML = user.activities[0].name;
+          userActivitieName.innerHTML = user.activities[indexToUse].name;
 
-          if (user.activities[0]?.assets?.large_image)
+          if (user.activities[indexToUse]?.assets?.large_image)
             userActivitieImageLarge.src =
               discordCdn +
               "/app-assets/" +
-              user.activities[0].application_id +
+              user.activities[indexToUse].application_id +
               "/" +
-              user.activities[0].assets.large_image;
+              user.activities[indexToUse].assets.large_image;
           else userActivitieImageLarge.src = "./images/UndefinedActivitie.svg";
 
-          if (user.activities[0]?.assets?.small_image)
+          if (user.activities[indexToUse]?.assets?.small_image)
             userActivitieImageSmall.src =
               discordCdn +
               "/app-assets/" +
-              user.activities[0].application_id +
+              user.activities[indexToUse].application_id +
               "/" +
-              user.activities[0].assets.small_image;
+              user.activities[indexToUse].assets.small_image;
           else removeSmallImageActivitie();
 
-          if (user.activities[0]?.details)
-            userActivitieDoing.innerHTML = user.activities[0].details;
+          if (user.activities[indexToUse]?.details)
+            userActivitieDoing.innerHTML = user.activities[indexToUse].details;
           else removeActivitieDoing();
         }
       } else removeActivities();
