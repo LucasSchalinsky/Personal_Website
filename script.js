@@ -50,8 +50,8 @@ window.onload = function () {
           removeActivities();
         else if (user.activities[indexToUse].name === "Spotify") {
           userActivitiePlaying.innerHTML = "Listening to Spotify";
-          userActivitieName.innerHTML = user.activities[0].details;
-          userActivitieDoing.innerHTML = user.activities[0].state;
+          userActivitieName.innerHTML = user.activities[indexToUse].details;
+          userActivitieDoing.innerHTML = user.activities[indexToUse].state;
           userActivitieImageLarge.src = "./images/spotify.png";
           removeSmallImageActivitie();
         } else {
