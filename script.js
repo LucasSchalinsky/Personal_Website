@@ -2,6 +2,7 @@ let spinnerWrapper = document.querySelector(".spinner-wrapper");
 let actitivitiesContainer = document.querySelector(".activities-container");
 
 let userAvatar = document.getElementById("user_avatar");
+let userAvatarEffect = document.getElementById("user_avatar_effect");
 let userBanner = document.getElementById("user_banner");
 let userDiscordStatus = document.getElementById("user_discord_status");
 let userNickname = document.getElementById("user_nickname");
@@ -33,6 +34,9 @@ window.onload = function () {
 
       userAvatar.src =
         discordCdn + "/avatars/" + userId + "/" + user.discord_user.avatar;
+
+      if(user.discord_user?.avatar_decoration_data) userAvatarEffect.src = discordCdn + "/avatar-decoration-presets/" + user.discord_user.avatar_decoration_data.asset + ".png?size=96&passthrough=true";
+      else removeAvatarEffect()
 
       user_discord_status.className = "discord-status " + user.discord_status;
 
@@ -109,6 +113,10 @@ function removeSpinner() {
   setTimeout(() => {
     spinnerWrapper.parentElement.removeChild(spinnerWrapper);
   }, 50);
+}
+
+function removeAvatarEffect() {
+  userAvatarEffect.parentElement.removeChild(userAvatarEffect);
 }
 
 function removeActivities() {

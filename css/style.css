@@ -130,6 +130,13 @@ p {
   width: 80px;
   height: 80px;
 }
+.container .content .images-container .avatar_effect {
+  position: relative;
+  top: -44px;
+  left: -98px;
+  width: 96px;
+  height: 96px;
+}
 .container .content .images-container .discord-status {
   position: relative;
   top: -77.3px;

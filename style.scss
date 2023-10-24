@@ -76,6 +76,14 @@ $content-padding: 16px;
         height: $avatar-wh;
       }
 
+      .avatar_effect{
+        position: relative;
+        top: - calc(math.div($avatar-wh, 2) + 4px);
+        left: - calc($avatar-wh * 1.25 - 2px );
+        width: 96px;
+        height: 96px;
+      }
+
       .discord-status {
         position: relative;
         top: - calc(((math.div($avatar-wh, 2) + $avatar-border + 16px) * 1.15) +
