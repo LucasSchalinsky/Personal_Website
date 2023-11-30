@@ -15,6 +15,11 @@ $badges-wh: 24px;
 
 $content-padding: 16px;
 
+iframe{
+  width: 100vw;
+  height: 100vh;
+}
+
 .margin-bottom {
   margin-bottom: $margin-bottom;
 }
